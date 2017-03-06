@@ -11,54 +11,7 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.Stack;
 
-class Node{
-	private int Data;
-	private Node Left;
-	private Node Right;
-	public Node sibling;
-	Node(int val)
-	{
-		Data=val;
-		Left=Right=null;
-	}
-	public int getData()
-	{
-		return Data;
-	}
-	public void setData(int val)
-	{
-		Data=val;
-	}
-	public Node getLeft()
-	{
-		return Left;
-	}
-	public Node getRight()
-	{
-		return Right;
-	}
-	public void setLeft(Node newNode)
-	{
-		Left=newNode;
-	}public void setRight(Node newNode)
-	{
-		Right=newNode;
-	}
-	public boolean hasLeft()
-	{
-		if(Left!=null)
-			return true;
-		return false;
-		
-	}
-	public boolean hasRight()
-	{
-		if(Right!=null)
-			return true;
-		return false;
-		
-	}
-}
+
 
 class Tree
 {
@@ -257,12 +210,12 @@ class Tree
 	public boolean searchNonRecurssive(Node root, int data)
 	{
 	
-		if(Root==null)
+		if(root==null)
 			return false;
 		else
 		{
 			Queue<Node> queue = new LinkedList<Node>();
-			queue.add(Root);
+			queue.add(root);
 			while(!queue.isEmpty())
 			{
 				Node temp = queue.remove();
@@ -295,7 +248,7 @@ class Tree
 		{
 			int size=0;
 			Queue<Node> queue = new LinkedList<Node>();
-			queue.add(Root);
+			queue.add(root);
 			while(!queue.isEmpty())
 			{
 				Node temp = queue.remove();
@@ -319,14 +272,14 @@ class Tree
 			root=null;
 		}
 	}
-	public void LevelOrderReverse(Node n1) {
-		if(Root==null)
+	public void LevelOrderReverse(Node root) {
+		if(root==null)
 			return;
 		else
 		{
 			Queue<Node> queue = new LinkedList<Node>();
 			Stack<Node> s = new Stack<Node>();
-			queue.add(Root);
+			queue.add(root);
 			while(!queue.isEmpty())
 			{
 				Node temp = queue.remove();
@@ -365,7 +318,7 @@ class Tree
 		{
 			int ht=0;
 			Queue<Node> queue = new LinkedList<Node>();
-			queue.add(Root);
+			queue.add(root);
 			queue.add(null);
 			while(!queue.isEmpty())
 			{
@@ -529,13 +482,13 @@ class Tree
 	}
 	public int addBTnonRecurssive(Node root) 
 	{
-		if(Root==null)
+		if(root==null)
 			return 0;
 		else
 		{
 			int sum=0;
 			Queue<Node> queue = new LinkedList<Node>();
-			queue.add(Root);
+			queue.add(root);
 			while(!queue.isEmpty())
 			{
 				Node temp = queue.remove();
@@ -636,7 +589,7 @@ class Tree
 		
 	}
 	public void zigzagLevelOrder(Node root) {
-	if(Root==null)
+	if(root==null)
 		return;
 	else
 	{
